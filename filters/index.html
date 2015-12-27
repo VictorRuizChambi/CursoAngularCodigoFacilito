@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Mi primera Página con AngularJS</title>
+		<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>
+	<script src="Controller.js"></script>
+</head>
+<body ng-controller="FiltersController">
+	{{mi_html | json}}
+	<p>
+		{{costo | currency: 'S/.'}}
+	</p>
+	<p>
+		{{saludo | removeHtml}}
+	</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MiApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo de ng-hide ng-show</title>
+	
+</head>
+	<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>
+	<script src="Controller.js"></script>
+<body ng-controller="PrimerControlador">
+	<h2>{{nombre}}</h2>
+	<p><strong>Valor del Padre: </strong>{{$parent.nombre}}</p>
+	<div ng-controller="ChildController">
+		<p><strong>Valor del Hijo: </strong>{{nombre}}</p>
+		<p>Valor del Abuelo</p><input type="text" ng-model="$parent.$parent.nombre">
+		<p>Valor del Padre y su heredero</p><input type="text" ng-model="$parent.nombre">
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MiApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo de ng-hide ng-show</title>
+	<style>
+		.animated{
+			opacity: 1;
+			max-height: auto;
+			overflow: hidden;/*todo lo que está fuera de las dimensiones lo oculta*/
+			transition: all 2s;
+		}
+		.animated.ng-hide{
+			opacity: 0;
+			max-height: 0px !important;
+			display: block !important;
+		}
+	</style>
+</head>
+	<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>
+	<script src="Controller.js"></script>
+<body ng-controller="PrimerControlador">
+	<div ng-show="loading" class="animated">Cargando...</div>
+	<div ng-show="!loading && posts.length <=0">No se Encontraron resultados </div>
+	<ul ng-show="posts.length > 0" class="animated">
+		<li ng-repeat="post in posts">
+			<h2>{{post.title}}</h2>
+			<p>{{post.body}}</p>
+		</li>
+	</ul>
+</body>
+</html>

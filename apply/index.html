@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo de Apply</title>
+</head>
+	<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>
+	<script>
+		angular.module("mainModule", [])
+		.controller("FirstController", function($scope){
+			$scope.nombre = "Victor";
+			/*setTimeout(function(){
+				$scope.$apply(function(){
+					$scope.nombre = "Codigo Facilito";
+					console.log($scope.nombre);
+				});
+			},2000);*/
+		document.querySelector("#mi_boton").addEventListener("click", function(){ 
+			$scope.$apply(function(){
+					$scope.nombre = "Codigo Facilito";
+			console.log($scope.nombre);
+				});
+			});
+		});
+	</script>
+<body ng-controller="FirstController">
+	<h1>{{nombre}}</h1>
+	<button id="mi_boton">Has clic</button>
+</body>
+</html>

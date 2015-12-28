@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CustomeDirective">
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="autocomplete-jquery-ui.structure.css"></link>
+	<title>Mi primera directiva con AngularJS</title>
+
+	<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>	
+	<script src="jquery.js"></script>
+	<script src="autocomplete-jquery-ui.js"></script>
+<script src="Controller.js"></script>
+	<style>
+		.circular{
+			border-radius : 50%;
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+		}
+
+		.no-list li{
+			list-style-type: none;
+		}
+
+		body, html{
+			text-align: center;
+			background-color:#eee;
+			margin: 0px; 
+		}
+	</style>
+</head>
+<body ng-controller="AppCtrl">
+							<!-- "ng-cloak" no muestra el contenido hasta que se cargue 
+							evitar mostrar el template de angular antes de que angular cargue -->
+		<!-- <ul class="no-list" ng-cloak> -->
+		<input type="text" my-autocomplete="repos" placeholder="Buscar repositorio">
+		<ul class="no-list" >
+			<li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name">
+				<!-- <img ng-src="{{repo.owner.avatar_url}}"> -->
+				<div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
+				<h1 class="inline-block">{{repo.full_name}}</h1>
+			</li>
+		</ul> 
+		<a ng-click="main_repo = null">Limpiar</a>
+</body>
+</html>

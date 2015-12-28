@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Mi primera página con AngularJS</title>
+	<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>
+	<script src="Controller.js"></script>
+	<style>
+		.hover{
+			background-color: rgb(200,50,50);
+		}
+
+		.no-hover{
+			background-color: rgb(50, 200, 50);
+		}
+	</style>
+</head>
+<body>
+	<!-- <button ng-mouseover="bandera = true" ng-mouseout=" -->
+									<!-- Si es verdadero asigna la clase 'hover' sino la quita en 'ng-class' -->
+									<!-- puede asignarse multiples clases -->
+<button ng-click="bandera=!bandera" ng-class="{'hover': bandera, 'no-hover': !bandera }">Hover me</button>
+	<span ng-show="bandera">&lt;-click me</span>
+	<p>
+		{{bandera | json}}
+	</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CustomeDirective">
+<head>
+	<meta charset="UTF-8">
+	<title>Ng-src y Ng-cloak</title>
+	<script src="../script/angular.min.js"></script>
+	<script src="../script/angular-local-storage.min.js"></script>
+	<script src="Controller.js"></script>
+	<style>
+		.circular{
+			border-radius : 50%;
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body ng-controller="AppCtrl">
+							<!-- "ng-cloak" no muestra el contenido hasta que se cargue 
+							evitar mostrar el template de angular antes de que angular cargue -->
+		<ul class="no-list" ng-cloak>
+			<li ng-repeat="repo in repos">
+				<!-- <img ng-src="{{repo.owner.avatar_url}}"> -->
+				<div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
+				<h1>{{repo.name}}</h1>
+			</li>
+		</ul> 
+</body>
+</html>

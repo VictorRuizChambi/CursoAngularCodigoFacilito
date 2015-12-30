@@ -1,0 +1,13 @@
+<input type="text" my-autocomplete="repos" placeholder="Buscar repositorio">
+<ul class="no-list" >
+	
+		<li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name">
+				<!-- <img ng-src="{{repo.owner.avatar_url}}"> -->
+			<a href="#/repo/{{repo.full_name}}">
+				<div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
+				<h1 class="inline-block">{{repo.full_name}}</h1>
+			</a>
+		</li>
+	
+</ul> 
+<a ng-click="main_repo = null">Limpiar</a>

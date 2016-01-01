@@ -5,9 +5,10 @@ angular.module("CustomeDirective",["ngRoute"])/*el routing es la forma como va a
 	$routeProvider /*nos permitirá definir la ruta*/
 	.when("/",{
 		controller: "ReposController",
-		templateUrl: "templates/home.html"
+		templateUrl: "templates/home.html",
+
 	})
-	.when("/repo/:full_name",{
+	.when("/repo/:login/:name",{
 		controller: "RepoController",
 		templateUrl: "templates/repo.html"
 	})

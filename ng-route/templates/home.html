@@ -3,7 +3,7 @@
 	
 		<li ng-repeat="repo in posts" ng-hide="main_repo && main_repo != repo.name">
 				<!-- <img ng-src="{{repo.owner.avatar_url}}"> -->
-			<a href="#/repo/{{repo.full_name}}">
+			<a href="#/repo/{{repo.owner.login}}/{{repo.name}}">
 				<div class="circular" back-img="{{repo.owner.avatar_url}}"></div>
 				<h1 class="inline-block">{{repo.full_name}}</h1>
 			</a>

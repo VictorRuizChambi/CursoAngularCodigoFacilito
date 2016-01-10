@@ -1,0 +1,43 @@
+<lx-tabs>
+<lx-tab heading="Posts">
+	<div class="p+">
+		<div class="card top-space" ng-repeat="post in posts">
+			<div class="p+">
+				<strong class="fs-headline display-block tc-red-900">
+					{{post.title}}
+				</strong>
+				<div class="paragraph fs-body-1 mt+">
+					{{post.body}}
+				</div>
+			</div>
+			<div class="card__actions">
+				<a href="#/post/{{post.id}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Leer más</a>
+				<a href="#/posts/edit/{{post.id}}" class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+				<a  ng-click="removePost(post)" class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+			</div>
+		</div>
+	</div>
+</lx-tab>
+<lx-tab heading="Users">
+	<div class="card top-space" ng-repeat="user in users">
+		<div flex-container="row">
+			<div class="card__img card__img--left" style="height: 160px;">
+				<img src="../resources/imgs/user.jpg">
+			</div>
+			<div flex-item flex-container="column">
+				<div flex-item>
+					<strong class="fs-headline display-block">
+						{{user.name}}
+					</strong>
+					<strong class="fs-subhead tc-black-2 display-block">
+						{{user.email}}
+					</strong>
+				</div>
+				<div class="card__actions">
+					<a href="">Ver Usuario</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</lx-tab>
+</lx-tabs>

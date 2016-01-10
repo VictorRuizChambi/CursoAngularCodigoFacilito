@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FinalApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../resources/css/materialdesignicons.css">
+	<link rel="stylesheet" href="../resources/css/lumx.css">
+	<link rel="stylesheet" href="../resources/css/main.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<script src="../resources/js/jquery.js"></script>
+	<script src="../resources/js/angular.min.js"></script>
+	<script src="../resources/js/angular-resource.min.js"></script>
+	<script src="../resources/js/angular-route.min.js"></script>
+	<script src="../resources/js/velocity.min.js"></script>
+	<script src="../resources/js/moment-with-locales.min.js"></script>
+	<script src="../resources/js/lumx.js"></script>
+	<script src="app.js"></script>
+	<script src="services.js"></script>
+	<script src="controllers.js"></script>
+</head>
+<body>
+	<nav>
+		<div class="bgc-blue-900 tc-white" flex-container="row" flex-align="center center">
+			<div flex-item="4">
+				<h1 class="fs-display-3 display-blok">Posts App</h1>
+			</div>
+			<div flex-item="1">
+				<a href="#/">Inicio</a>
+			</div>
+			<div flex-item="1">
+				<a href="#/posts/new">Crear Post</a>
+			</div>
+
+		</div>
+	</nav>
+	<div   flex-container="row" flex-align="center">
+		<div ng-view flex-item="9">
+			
+		</div>
+	</div>
+	
+</body>
+</html>
